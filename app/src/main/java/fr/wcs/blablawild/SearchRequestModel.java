@@ -16,7 +16,6 @@ public class SearchRequestModel implements Parcelable {
     }
 
     protected SearchRequestModel(Parcel in) {
-
         mDestination = in.readString();
         mDeparture = in.readString();
         mDate = in.readString();
@@ -38,11 +37,9 @@ public class SearchRequestModel implements Parcelable {
     public String getmDepart() {
         return mDeparture;
     }
-
     public String getmArrivee() {
         return mDestination;
     }
-
     public String getmDateDepart() {
         return mDate;
     }

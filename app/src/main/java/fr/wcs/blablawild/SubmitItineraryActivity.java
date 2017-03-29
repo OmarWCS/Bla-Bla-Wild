@@ -23,6 +23,7 @@ public class SubmitItineraryActivity extends AppCompatActivity {
     private EditText editTextDate;
     private Button buttonPublish;
     ItineraryModel mItineraryModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,37 +40,32 @@ public class SubmitItineraryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (editTextDeparture.length() != 0 && editTextDestination.length() != 0 && editTextPrice.length() != 0 && editTextDate.length() != 0) {
-                String mLastName ="Proust";
-                String mFirstName ="Marcel";
-                int mId = 0;
-                String mDeparture = editTextDeparture.getText().toString();
-                String mDestination = editTextDestination.getText().toString();
-                int mPrice = Integer.parseInt(editTextPrice.getText().toString());
-                String mDate = editTextDate.getText().toString();
+                    String mLastName = "Proust";
+                    String mFirstName = "Marcel";
+                    int mId = 0;
+                    String mDeparture = editTextDeparture.getText().toString();
+                    String mDestination = editTextDestination.getText().toString();
+                    int mPrice = Integer.parseInt(editTextPrice.getText().toString());
+                    String mDate = editTextDate.getText().toString();
 
 
+                    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference ref = database.getReference("itineraries");
 
-                final FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference ref = database.getReference("itineraries");
 
-
-                mItineraryModel = new ItineraryModel(mId, mLastName, mFirstName, mDate, mPrice, mDeparture, mDestination);
-                ref.push().setValue(mItineraryModel);
-                finish();
-                } else {
-                    Context context = getApplicationContext();
-                    CharSequence text = getString(R.string.toast);
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context,text,duration);
-                    toast.show();
+                    mItineraryModel = new ItineraryModel(mId, mLastName, mFirstName, mDate, mPrice, mDeparture, mDestination);
+                    ref.push().setValue(mItineraryModel);
+                    finish();
                 }
+
+                    else {
+                        Context context = getApplicationContext();
+                        CharSequence text = getString(R.string.toast);
+                        int duration = Toast.LENGTH_SHORT;
+                        Toast toast = Toast.makeText(context,text,duration);
+                        toast.show();
+                    }
             }
-
         });
-
-
-
-
-
     }
 }

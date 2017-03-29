@@ -11,7 +11,7 @@ import static fr.wcs.blablawild.R.id.textViewPrice;
 
 public class TripResultAdapter extends FirebaseListAdapter<ItineraryModel> {
 
-    
+
     private TextView textViewDeparture;
     private TextView textViewName;
     private TextView texViewPrice;

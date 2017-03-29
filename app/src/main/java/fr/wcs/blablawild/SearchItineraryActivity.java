@@ -34,26 +34,25 @@ public class SearchItineraryActivity extends AppCompatActivity {
 
         seekButton.setOnClickListener(new View.OnClickListener() {
 
-                                          @Override
-                                          public void onClick(View v) {
-                                              if (textUserDeparture.length() != 0 && textUserDestination.length() != 0) {
+            @Override
+            public void onClick(View v) {
+                if (textUserDeparture.length() != 0 && textUserDestination.length() != 0) {
 
-                                                  String mDeparture = textUserDeparture.getText().toString();
-                                                  String mDestination = textUserDestination.getText().toString();
-                                                  String mDate = textUserDate.getText().toString();
+                    String mDeparture = textUserDeparture.getText().toString();
+                    String mDestination = textUserDestination.getText().toString();
+                    String mDate = textUserDate.getText().toString();
 
-                                                  SearchRequestModel search = new SearchRequestModel(mDeparture, mDestination, mDate);
+                    SearchRequestModel search = new SearchRequestModel(mDeparture, mDestination, mDate);
 
-                                                  Intent intent = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
-                                                  intent.putExtra(SEARCH, search);
-                                                  startActivity(intent);
+                    Intent intent = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
+                    intent.putExtra(SEARCH, search);
+                    startActivity(intent);
 
-                                              } else {
-                                                  Toast.makeText(SearchItineraryActivity.this, getString(R.string.toast), Toast.LENGTH_LONG).show();
-                                              }
-                                          }
-
-                                      }
-        );
+                }
+                    else {
+                    Toast.makeText(SearchItineraryActivity.this, getString(R.string.toast), Toast.LENGTH_LONG).show();
+                    }
+            }
+        });
     }
 }

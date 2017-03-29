@@ -13,11 +13,7 @@ public class ItineraryModel {
     private String mDestination;
 
     private ItineraryModel(){
-
     }
-
-
-
 
     public ItineraryModel(int user, String driverLastName, String driverFirstName, String departureDate, int price, String departure, String destination){
         mUser = user;

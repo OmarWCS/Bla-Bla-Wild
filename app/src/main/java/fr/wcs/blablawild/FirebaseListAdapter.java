@@ -65,17 +65,19 @@ public abstract class FirebaseListAdapter<ItineraryModel> extends BaseAdapter {
                 if (previousChildName == null) {
                     mModels.add(0, model);
                     mKeys.add(0, key);
-                } else {
-                    int previousIndex = mKeys.indexOf(previousChildName);
-                    int nextIndex = previousIndex + 1;
+                }
+                    else {
+                        int previousIndex = mKeys.indexOf(previousChildName);
+                        int nextIndex = previousIndex + 1;
                     if (nextIndex == mModels.size()) {
                         mModels.add(model);
                         mKeys.add(key);
-                    } else {
+                    }
+                    else {
                         mModels.add(nextIndex, model);
                         mKeys.add(nextIndex, key);
                     }
-                }
+                    }
 
                 notifyDataSetChanged();
             }
@@ -104,39 +106,39 @@ public abstract class FirebaseListAdapter<ItineraryModel> extends BaseAdapter {
     }
 
 
-    public void cleanup() {
-        // We're being destroyed, let go of our mListener and forget about all of the mModels
-        mRef.removeEventListener(mListener);
-        mModels.clear();
-        mKeys.clear();
-    }
+        public void cleanup() {
+            // We're being destroyed, let go of our mListener and forget about all of the mModels
+            mRef.removeEventListener(mListener);
+            mModels.clear();
+            mKeys.clear();
+        }
 
-    @Override
-    public int getCount() {
+        @Override
+        public int getCount() {
         return mModels.size();
     }
 
-    @Override
-    public Object getItem(int i) {
+        @Override
+        public Object getItem(int i) {
         return mModels.get(i);
     }
 
-    @Override
-    public long getItemId(int i) {
+        @Override
+        public long getItemId(int i) {
         return i;
     }
 
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        if (view == null) {
-            view = mInflater.inflate(mLayout, viewGroup, false);
-        }
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            if (view == null) {
+                view = mInflater.inflate(mLayout, viewGroup, false);
+            }
 
         ItineraryModel model = mModels.get(i);
         // Call out to subclass to marshall this model into the provided view
         populateView(view, model);
         return view;
-    }
+        }
 
     /**
      * Each time the data at the given Firebase location changes, this method will be called for each item that needs
