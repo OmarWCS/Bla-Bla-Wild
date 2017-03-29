@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.wcs.blablawild">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,9 +23,9 @@
         </activity>
         <activity android:name=".SearchItineraryActivity" />
         <activity android:name=".ViewSearchItineraryResultsListActivity" />
-        <activity android:name=".SubmitItineraryActivity">
-        </activity>
-
+        <activity android:name=".SubmitItineraryActivity" />
+        <activity android:name=".AccountActivity" />
+        <activity android:name=".SignupActivity"></activity>
     </application>
 
 </manifest>

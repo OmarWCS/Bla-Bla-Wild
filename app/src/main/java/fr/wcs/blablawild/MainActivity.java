@@ -16,6 +16,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button homePageButton;
     Button submitButton;
+    Button signUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         homePageButton = (Button) findViewById(R.id.homePageButton);
         submitButton = (Button) findViewById(R.id.submitButton);
+        signUpButton = (Button)findViewById(R.id.buttonToSignUp);
 
         homePageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(toSearch);
                     }
                 });
+            }
+        });
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toSignUp = new Intent(MainActivity.this, SignupActivity.class);
+                startActivity(toSignUp);
             }
         });
     }

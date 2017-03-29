@@ -16,4 +16,9 @@
     <string name="search">search</string>
     <string name="datemissing">Vous n\'avez pas donné de date à votre voyage</string>
     <string name="submit">Soumettre</string>
+    <string name="user_disconnect">Je me déconnecte</string>
+    <string name="toastSignUpOk">Félicitations ! Bienvenue sur WildBuzz !</string>
+    <string name="toastSignUpFail">Aie ! Quelquechose s\'est mal passé&#8230;</string>
+    <string name="email_placeholder">Quel est ton email ?</string>
+    <string name="password_placeholder">Ton mot de passe</string>
 </resources>
