@@ -21,4 +21,7 @@
     <string name="toastSignUpFail">Aie ! Quelquechose s\'est mal passé&#8230;</string>
     <string name="email_placeholder">Quel est ton email ?</string>
     <string name="password_placeholder">Ton mot de passe</string>
+    <string name="title_activity_signin">SigninActivity</string>
+    <string name="no_account_text">Pas encore de compte ?</string>
+    <string name="no_account">Créer mon compte</string>
 </resources>

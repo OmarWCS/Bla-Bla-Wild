@@ -55,7 +55,7 @@ public class SignupActivity extends AppCompatActivity {
     // j'applique la méthode createUserWithEmailAndPassword() sur l'objet firebaseAuth
     private void registerUser(){
 
-        //getting email and password from edit texts
+        //get email et password depuis les strings
         String email = mUserEmail.getText().toString().trim();
         String password  = mUserPassword.getText().toString().trim();
 
@@ -70,8 +70,8 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
 
-        //if the email and password are not empty
-        //displaying a progress dialog
+        //si edit text email et mot de passe sont remplis -->
+        //progressDialog
 
         mProgressDialog.setMessage("Registering Please Wait...");
         mProgressDialog.show();
