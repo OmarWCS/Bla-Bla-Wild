@@ -2,6 +2,7 @@ package fr.wcs.blablawild;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,11 +56,11 @@ public class SignupActivity extends AppCompatActivity {
     // j'applique la méthode createUserWithEmailAndPassword() sur l'objet firebaseAuth
     private void registerUser(){
 
-        //getting email and password from edit texts
+        //getters sur email et password
         String email = mUserEmail.getText().toString().trim();
         String password  = mUserPassword.getText().toString().trim();
 
-        //checking if email and passwords are empty
+        //toast si champs incomplets
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Quel est ton email ?",Toast.LENGTH_LONG).show();
             return;
@@ -89,6 +90,7 @@ public class SignupActivity extends AppCompatActivity {
                             int duration = Toast.LENGTH_SHORT;
                             Toast toast = Toast.makeText(context,text,duration);
                             toast.show();
+                            startActivity(new Intent(SignupActivity.this, AccountActivity.class));
                         }else{
                             Context context = getApplicationContext();
                             CharSequence text = getString(R.string.toastSignUpFail);
